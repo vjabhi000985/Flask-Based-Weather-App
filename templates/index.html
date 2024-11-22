@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    
+    <!-- Link to the favicon image for the website -->
+    <link rel="icon" href="../static/images/icon.png" type="image/x-icon">
+    
+    <!-- Link to the external CSS file for styling the webpage -->
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    {% if weather %} <!-- Check if weather data is available -->
+    <div class="container">
+        <div class="wrapper">
+        
+            <!-- Weather display section -->
+            <div class="img_section">
+                <div class="default_info">
+                    <!-- Display the current day name -->
+                    <h2 class="default_day">{{ day }}</h2>
+                    <!-- Display the current date -->
+                    <span class="default_date">{{ date }}</span>
+                    <!-- This span will hold the time later using JavaScript -->
+                    <span class="default_time"></span>
+
+                    <!-- Weather icons and temperature display -->
+                    <div class="icons">
+                        <img src="../static/images/weather-cloud.webp" alt="" />
+                        <!-- Display the current temperature dynamically -->
+                        <h2 class="weather_temp">{{ weather.temperature }}°C</h2>
+                        <!-- Display a hardcoded cloud description, you can modify this later -->
+                        <h3 class="cloudtxt">Overcast Clouds</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content section to show detailed weather info -->
+            <div class="content_section">
+                <!-- Form to search for weather by city -->
+                <form action="/weather" method="post">
+                    <input type="text" name="city" placeholder="Search Location" class="input_field" />
+                    <button type="submit" class="btn_search">Search</button>
+                </form>
+
+                <!-- Display detailed weather information -->
+                <div class="day_info">
+                    <!-- Show the city name -->
+                    <div class="content">
+                        <p class="title">CITY</p>
+                        <span class="value">{{ weather.city }}</span>
+                    </div>
+                    <!-- Show the temperature -->
+                    <div class="content">
+                        <p class="title">TEMP</p>
+                        <span class="value">{{ weather.temperature }}°C</span>
+                    </div>
+                    <!-- Show the humidity -->
+                    <div class="content">
+                        <p class="title">HUMIDITY</p>
+                        <span class="value">{{ weather.humidity }}%</span>
+                    </div>
+                    <!-- Show the wind speed -->
+                    <div class="content">
+                        <p class="title">WIND SPEED</p>
+                        <span class="value">{{ weather.wind_speed }} Km/h</span>
+                    </div>
+                </div>
+
+        {% endif %} <!-- End of the weather check block -->
+
+        <!-- Weather forecast for the coming days -->
+        <div class="list_content">
+            <ul>
+                <!-- Repeat this block for each day in the forecast -->
+                <li>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                    <span>Sat</span> <!-- Placeholder for the day -->
+                    <span class="day_temp">23°C</span> <!-- Placeholder for the temperature -->
+                </li>
+                <li>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                    <span>Sat</span>
+                    <span class="day_temp">23°C</span>
+                </li>
+                <li>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                    <span>Sat</span>
+                    <span class="day_temp">23°C</span>
+                </li>
+                <li>
+                    <img src="https://openweathermap.org/img/wn/10d@2x.png" />
+                    <span>Sat</span>
+                    <span class="day_temp">23°C</span>
+                </li>
+            </ul>
+        </div>
+
+        </div>
+    </div>
+
+    <!-- External JavaScript files to handle functionality -->
+    <!-- Main JS file for general script -->
+    <script src="../static/js/main.js"></script>
+    <!-- JS for handling weather forecast data -->
+    <script src="../static/js/forecast.js"></script>
+    <!-- JS for updating time dynamically -->
+    <script src="../static/js/update_time.js"></script>
+    <!-- JS for updating weather description (e.g., "Overcast Clouds") -->
+    <script src="../static/js/weather_desc.js"></script>
+    <!-- JS for updating weather forecast - days-->
+    <script src="../static/js/update_days.js"></script>
+</body>
+
+</html>

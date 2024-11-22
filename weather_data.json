@@ -1,0 +1,33 @@
+{
+    "data": {
+        "time": "2024-11-16T17:56:00Z",
+        "values": {
+            "cloudBase": null,
+            "cloudCeiling": null,
+            "cloudCover": 0,
+            "dewPoint": 12.69,
+            "freezingRainIntensity": 0,
+            "humidity": 86,
+            "precipitationProbability": 0,
+            "pressureSurfaceLevel": 946.24,
+            "rainIntensity": 0,
+            "sleetIntensity": 0,
+            "snowIntensity": 0,
+            "temperature": 16.81,
+            "temperatureApparent": 16.81,
+            "uvHealthConcern": 0,
+            "uvIndex": 0,
+            "visibility": 15.34,
+            "weatherCode": 1000,
+            "windDirection": 336.63,
+            "windGust": 3.31,
+            "windSpeed": 2
+        }
+    },
+    "location": {
+        "lat": 23.300703048706055,
+        "lon": 85.37388610839844,
+        "name": "Ranchi, Jharkhand, India",
+        "type": "administrative"
+    }
+}
